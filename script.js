@@ -1,4 +1,5 @@
-var display = document.getElementById("display")
+      
+      var display = document.getElementById("display")
       var varde= [];
       varde[0] = 0;
       varde[1] = 0;
@@ -6,24 +7,24 @@ var display = document.getElementById("display")
 
         document.body.onclick = function(anEvent) { 
         
-        var u = anEvent.target.id;
+        var i = anEvent.target.id;
         display.type='text'
         
-        if(u===''){
+        if(i===''){
           return;
         } // exekverar javascript funktionen
 
 
         if (display.value ==='0' &&
-         u!='percent' &&
-          u!='0' &&
-          u!='equal' && 
-          u!='divide'
-           && u!='multiply' && 
-           u!='add' && 
-           u!='subtract') {
-          if(u !='clear'){
-            display.value = u;
+         i!='percent' &&
+          i!='0' &&
+          i!='equal' && 
+          i!='divide'
+           && i!='multiply' && 
+           i!='add' && 
+           i!='subtract') {
+          if(i !='clear'){
+            display.value = i;
           }
         //display.value är en output för java scripten. Men var display kommer från html elementet.
           
@@ -34,7 +35,7 @@ var display = document.getElementById("display")
 
           }
 
-          else if (u==='equal'){
+          else if (i==='equal'){
             varde[1]=display.value;
             switch(varde[2]){ //Switch case använd här för att man kan välja vilken av koderna som man vill exekvera.
               case 'add': //Denna kod är den som exekverar stegen som räknaren följer när den räknar ut talen.
@@ -64,20 +65,20 @@ var display = document.getElementById("display")
 
           }
 
-          else if(u==='clear') {
+          else if(i==='clear') {
             display.value=0;    //Vissa 0 om du trycker på Clear
           } 
           
-          else if (u==='dot'){
+          else if (i==='dot'){
             if(!display.value.includes('.')){
               display.value +='.'; // Eftersom att talet får ett större värde när du änvänder "dot" så adderas den i funktionen.
             }
 
-          else if(u==='percent') {
+          else if(i==='percent') {
             display.value *= 0.01; //1% av 100 är = 100*0.01 vilket betyder att vi måste deklarare det i funktionen.
           }
 
-          else if(u==='negate'){
+          else if(i==='negate'){
             display.value *= -1; //...
              }
             }
@@ -86,10 +87,10 @@ var display = document.getElementById("display")
 
          else if ( //"boolean" "local" om du väljer att utföra en av dessa funktioner kommer denna kod 
                    // Att bedöma om den är "true" eller "false"
-          u==='divide'   ||
-          u==='multiply' || 
-          u==='subtract' || 
-          u==='add'
+          i==='divide'   ||
+          i==='multiply' || 
+          i==='subtract' || 
+          i==='add'
           ) 
           
           
@@ -97,13 +98,13 @@ var display = document.getElementById("display")
             varde[0]=display.value;
             console.log(varde)// Ger ett meddelande eller i detta fall ett varde från html.
             display.value ='';
-            varde[2] = u;
+            varde[2] = i;
           }
 
 
           else{
 
-              display.value += u;
+              display.value += i;
           }
       
     };
